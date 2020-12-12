@@ -10,7 +10,6 @@ const useFetch = (callback, url) => {
     setLoading(false);
   };
   useEffect(() => {
-    console.log(1);
     fetchInitialData();
   }, []); // useEffect가 관찰할 대상이 [] (=null)이기 때문에 처음 한번만 실행이 됨
   return loading;

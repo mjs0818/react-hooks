@@ -3,12 +3,10 @@ import { TodoContext } from './TodoStore.js';
 import Item from './Item.jsx';
 
 const List = () => {
-  const { todos, loading, changeTodoStatus } = useContext(TodoContext);
+  const { todos, loading } = useContext(TodoContext);
   let todoList = <div>loading...</div>;
   if (!loading)
-    todoList = todos.map((todo) => (
-      <Item key={todo.id} todo={todo} changeTodoStatus={changeTodoStatus} />
-    ));
+    todoList = todos.map((todo) => <Item key={todo.id} todo={todo} />);
   return <ul>{todoList}</ul>;
 };
 
